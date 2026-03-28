@@ -33,6 +33,8 @@ Use `verification` when the user asks whether the workflow has been truly exerci
 
 If the user does not specify a mode, infer the closest one from the request and state which mode you chose.
 
+When uncertain where to start, prefer this order: `contract` first, then `readiness`, then `verification`. Each mode builds on the assurances of the prior one.
+
 ## Required Inputs
 
 Read the repository's formal entry contract and only the documents needed for the selected mode.
@@ -68,24 +70,9 @@ If the repository lacks a unique formal entry, report that as a finding rather t
 
 ## Output Contract
 
-Always structure the result as:
+See `references/output-templates.md` for the required output structure, scoring format, and section rules.
 
-1. Audit Scope
-2. Evidence Basis
-3. Scoring
-4. Conclusion
-5. High-Risk Findings
-6. Recommendations
-7. Uncertainties
-
-Rules:
-
-- Give one primary conclusion only.
-- Separate confirmed findings from uncertainties.
-- Do not hide missing evidence inside recommendations.
-- Prefer high-signal findings over exhaustive restatement.
-- When a conclusion depends on inference, mark it clearly as an inference.
-- When repository materials conflict, describe the conflict before scoring downstream impact.
+Additional rule: when repository materials conflict, describe the conflict before scoring downstream impact.
 
 ## References
 

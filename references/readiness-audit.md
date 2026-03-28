@@ -160,6 +160,25 @@ Scoring anchors:
 - `Ready`: all Hard Gates satisfied, all dimensions at 6/10 or above, no High-Risk Signal triggered
 - `Strongly Ready`: all dimensions at 8/10 or above, Dimension 6 at 9/10 or above, no High-Risk Signal triggered
 
+## Structural vs Operational Gap
+
+Distinguish between two types of gaps before scoring.
+
+**Structural gap:** the mechanism does not exist — no rule defines it, AI finds no entry point.
+Examples: no task carrier defined, no gate definition anywhere in the repository.
+Effect: triggers Hard Gate failure, caps the corresponding dimension at 4/10, caps overall rating at `Partially Ready`.
+
+**Operational gap:** the mechanism exists but in its current state AI cannot use it effectively.
+Examples: task carrier exists but is structured such that the current task cannot be uniquely determined; gate command defined but points to a non-existent script.
+Effect: recorded as a finding, lowers the affected dimension score, does not trigger Hard Gate failure.
+
+**Readiness does not judge:**
+
+- Whether mechanisms have been executed or evidenced — that is `verification` mode.
+- Whether rules are well-written, clear, or redundant — that is `contract` mode.
+
+**Default:** If missing evidence prevents distinguishing structural from operational gap, treat as structural gap and note the assumption explicitly in the Uncertainties section.
+
 ## Output Requirements
 
 Always provide:

@@ -135,7 +135,7 @@ Scoring anchors:
 - `0-2`: no review or remote validation requirement
 - `3-5`: review exists but not bound to task, or no repair path after failure
 - `6-8`: review and remote validation explicitly bound to task, failure has repair and re-validation path
-- `9-10`: full loop, completion before checks pass is explicitly prohibited, repair path is explicit
+- `9-10`: full loop explicitly defined end-to-end, completion before checks pass is explicitly prohibited, and repair path is documented rather than implied
 
 ### 6. Context Recovery And Evolution
 
@@ -150,7 +150,7 @@ Scoring anchors:
 
 - `0-2`: new session cannot recover current state, depends on chat history
 - `3-5`: partial recovery possible, but version or next step is ambiguous
-- `6-8`: new session can uniquely determine phase, task, and next step
+- `6-8`: new session can uniquely determine phase, task, next step, and version
 - `9-10`: fully stateless recovery, rules have a versioned evolution path, mutable and immutable documents are distinguishable
 
 ## Rating Bands

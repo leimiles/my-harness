@@ -21,18 +21,22 @@ A ready repository should let AI reliably determine:
 
 ## Hard Gates
 
-If any item is missing, the repository cannot be rated `Ready`:
+If any gate is missing, the repository cannot be rated `Ready`. A missing gate caps the corresponding dimension at 4/10. Two or more missing gates cap the overall rating at `Not Ready`; one missing gate caps it at `Partially Ready`.
 
-1. Unique rule entry
-2. Explicit phase or execution boundary
-3. Explicit task or plan mechanism
-4. Explicit progress determination
-5. Explicit local gate
-6. Explicit task tracking and review rules
-7. Explicit remote validation path and failure loop
-8. Explicit AI coding boundary
-9. Explicit stop or rollback after failure
-10. Explicit completion backfill or delivery artifacts
+| Gate | Governing Dimension |
+|---|---|
+| 1. Unique rule entry | 1. Entry And Execution Boundaries |
+| 2. Explicit phase or execution boundary | 1. Entry And Execution Boundaries |
+| 3. Explicit task or plan mechanism | 2. Task And Plan System |
+| 4. Explicit progress determination | 3. Progress And Traceability |
+| 5. Explicit local gate | 4. Local Validation And Completion Definition |
+| 6. Explicit task tracking and review rules | 5. Review And Remote Validation Loop |
+| 7. Explicit remote validation path and failure loop | 5. Review And Remote Validation Loop |
+| 8. Explicit AI coding boundary | 1. Entry And Execution Boundaries |
+| 9. Explicit stop or rollback after failure | 4. Local Validation And Completion Definition |
+| 10. Explicit completion backfill or delivery artifacts | 3. Progress And Traceability |
+
+**Gate 8 — Explicit AI coding boundary:** The repository must have an explicit rule stating when AI may and may not modify code. A broad statement such as "follow the process" does not satisfy this gate. The boundary must be stated as a condition, not implied by convention.
 
 ## High-Risk Signals
 

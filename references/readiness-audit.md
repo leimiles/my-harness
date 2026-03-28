@@ -158,7 +158,7 @@ Scoring anchors:
 - `Not Ready`: 2 or more Hard Gates missing, or 2 or more dimensions below 4/10
 - `Partially Ready`: 1 Hard Gate missing, or all Hard Gates present but one or more structural gaps exist, or 1-2 dimensions in the 4-5 range
 - `Ready`: all Hard Gates satisfied, all dimensions at 6/10 or above, no High-Risk Signal triggered
-- `Strongly Ready`: all dimensions at 8/10 or above, context recovery complete, no High-Risk Signal triggered
+- `Strongly Ready`: all dimensions at 8/10 or above, Dimension 6 at 9/10 or above, no High-Risk Signal triggered
 
 ## Output Requirements
 

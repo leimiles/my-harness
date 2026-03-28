@@ -38,6 +38,15 @@ If any gate is missing, the repository cannot be rated `Ready`. A missing gate c
 
 **Gate 8 — Explicit AI coding boundary:** The repository must have an explicit rule stating when AI may and may not modify code. A broad statement such as "follow the process" does not satisfy this gate. The boundary must be stated as a condition, not implied by convention.
 
+**Required in audit output:** For every gate, report its status and cite the evidence. Use this format:
+
+| Gate | Status | Evidence |
+|---|---|---|
+| 5. Explicit local gate | PRESENT | `docs/PHASE_DEVELOPMENT.md §4` — ordered gate commands defined |
+| 8. Explicit AI coding boundary | MISSING | no explicit condition found in entry contract |
+
+A `PRESENT` finding without an evidence citation is not acceptable. If the gate exists but the evidence cannot be located, treat it as `MISSING` and note the gap in Uncertainties.
+
 ## High-Risk Signals
 
 Any of the following should materially downgrade the result:
@@ -54,6 +63,19 @@ Any of the following should materially downgrade the result:
 ## Scoring Dimensions
 
 Score each dimension from `0-10`.
+
+**Required in audit output:** Each dimension score must include:
+- **Evidence**: the specific files and sections that support the score
+- **Rationale**: one sentence connecting the evidence to the anchor band
+
+Example:
+```
+Dimension 4 — Local Validation And Completion Definition: 9/10
+Evidence: docs/PHASE_DEVELOPMENT.md §4 (gate commands), §6 (environment failure rule)
+Rationale: gate commands are concrete and ordered; completion requires gate passage; environment failure triggers mandatory risk report
+```
+
+A score without evidence and rationale is not acceptable.
 
 ### 1. Entry And Execution Boundaries
 
@@ -185,7 +207,7 @@ Always provide:
 
 1. Audit Scope
 2. Evidence Basis
-3. Scoring
+3. Scoring — for each Hard Gate: PRESENT/MISSING with file+section citation; for each dimension: score, evidence, and rationale
 4. Conclusion
 5. High-Risk Findings
 6. Recommendations

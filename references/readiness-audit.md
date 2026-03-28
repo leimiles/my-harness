@@ -166,7 +166,7 @@ Distinguish between two types of gaps before scoring.
 
 **Structural gap:** the mechanism does not exist — no rule defines it, AI finds no entry point.
 Examples: no task carrier defined, no gate definition anywhere in the repository.
-Effect: triggers Hard Gate failure, caps the corresponding dimension at 4/10, caps overall rating at `Partially Ready`.
+Effect: triggers Hard Gate failure, caps the corresponding dimension at 4/10, and caps overall rating per the Hard Gates section (1 missing gate → `Partially Ready` max; 2 or more missing gates → `Not Ready` max).
 
 **Operational gap:** the mechanism exists but in its current state AI cannot use it effectively.
 Examples: task carrier exists but is structured such that the current task cannot be uniquely determined; gate command defined but points to a non-existent script.

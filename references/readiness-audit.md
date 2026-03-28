@@ -63,6 +63,13 @@ Check:
 - coding allowed or forbidden boundary
 - destructive or high-risk action boundary
 
+Scoring anchors:
+
+- `0-2`: no unique entry, coding boundary undefined
+- `3-5`: entry exists but not unique, or AI coding boundary relies on convention rather than explicit rule
+- `6-8`: unique entry, coding and high-risk action boundaries are mostly explicit
+- `9-10`: unique and unambiguous entry, all boundaries explicit, executable, requiring no inference
+
 ### 2. Task And Plan System
 
 Check:
@@ -71,6 +78,13 @@ Check:
 - plan carrier exists
 - status model exists
 - current task and next step can be uniquely determined
+
+Scoring anchors:
+
+- `0-2`: no task or plan carrier, current task cannot be determined
+- `3-5`: carriers exist but status model is incomplete, or current task requires inference
+- `6-8`: task and plan carriers complete, current task and next step can be uniquely determined
+- `9-10`: status model complete with explicit conflict resolution rules, no dependence on chat history
 
 ### 3. Progress And Traceability
 
@@ -81,6 +95,13 @@ Check:
 - failure traces exist
 - temporary or exception work has a bounded tracking path
 
+Scoring anchors:
+
+- `0-2`: no progress rule, no path for recording failure
+- `3-5`: progress rule exists but completion definition is vague, or temporary work has no tracking path
+- `6-8`: completion definition explicit, failures recorded, temporary work is bounded
+- `9-10`: progress fully traceable, delivery artifact requirements explicit, exception paths bounded
+
 ### 4. Local Validation And Completion Definition
 
 Check:
@@ -90,6 +111,13 @@ Check:
 - completion claims require validation
 - environment-related inability to validate has a required risk report
 - evidence is expected, not implied
+
+Scoring anchors:
+
+- `0-2`: no local gate, completion can be self-declared
+- `3-5`: gate exists but commands are not concrete, or no rule for when validation is not possible
+- `6-8`: gate explicit and commands executable, completion claims require gate passage
+- `9-10`: gate complete, evidence requirements explicit, environment failure triggers mandatory risk report
 
 ### 5. Review And Remote Validation Loop
 
@@ -102,6 +130,13 @@ Check:
 - repair and re-validation path
 - prohibition on claiming completion before checks pass
 
+Scoring anchors:
+
+- `0-2`: no review or remote validation requirement
+- `3-5`: review exists but not bound to task, or no repair path after failure
+- `6-8`: review and remote validation explicitly bound to task, failure has repair and re-validation path
+- `9-10`: full loop, completion before checks pass is explicitly prohibited, repair path is explicit
+
 ### 6. Context Recovery And Evolution
 
 Check:
@@ -110,6 +145,13 @@ Check:
 - rules do not depend on chat history
 - versioned evolution path is explicit
 - mutable vs immutable documents are distinguishable
+
+Scoring anchors:
+
+- `0-2`: new session cannot recover current state, depends on chat history
+- `3-5`: partial recovery possible, but version or next step is ambiguous
+- `6-8`: new session can uniquely determine phase, task, and next step
+- `9-10`: fully stateless recovery, rules have a versioned evolution path, mutable and immutable documents are distinguishable
 
 ## Rating Bands
 

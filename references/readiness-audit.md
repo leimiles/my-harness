@@ -2,6 +2,11 @@
 
 Use this mode to determine whether a repository is operationally ready for safe, controlled AI coding.
 
+## Boundaries
+
+- The agent executing this audit must not be the agent that recently defined or optimized the rules of the repository being audited. If it is, the audit conclusion lacks independence and a new session must be used.
+- This skill audits whether structural prerequisites exist; it does not audit rule quality (contract mode) or execution evidence (verification mode).
+
 ## Goal
 
 A ready repository should let AI reliably determine:

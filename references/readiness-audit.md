@@ -21,7 +21,7 @@ A ready repository should let AI reliably determine:
 
 ## Hard Gates
 
-If any gate is missing, the repository cannot be rated `Ready`. A missing gate caps the corresponding dimension at 4/10. Two or more missing gates cap the overall rating at `Not Ready`; one missing gate caps it at `Partially Ready`.
+If any gate is missing, the repository cannot be rated `Ready`. A missing gate caps the corresponding dimension at 4/10, regardless of how many gates within that dimension are missing. Two or more missing gates cap the overall rating at `Not Ready`; one missing gate caps it at `Partially Ready`. Dimension 6 (Context Recovery And Evolution) has no hard gate; a low score there affects the overall band through the dimension scoring rules only.
 
 | Gate | Governing Dimension |
 |---|---|

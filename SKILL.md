@@ -1,15 +1,14 @@
 ---
 name: ai-harness-auditor
-description: Use when auditing an AI collaboration contract, checking whether a repository is ready for AI coding, verifying an AI harness through real execution, or reviewing rule clarity, convergence, redundancy, and execution safety. Produces audits with scores, conclusions, risks, and prioritized recommendations.
+description: Use when auditing an AI collaboration contract or checking whether a repository is ready for AI coding. Reviews rule clarity, convergence, redundancy, execution safety, and structural prerequisites. Produces audits with scores, conclusions, risks, and prioritized recommendations.
 ---
 
 # AI Harness Auditor
 
-This skill audits a repository's AI collaboration system in one of three modes:
+This skill audits a repository's AI collaboration system in one of two modes:
 
 - `contract`: audit rule clarity, convergence, ambiguity, and redundancy
 - `readiness`: audit whether the repository is structurally ready for safe AI coding
-- `verification`: audit whether the claimed workflow has been proven by real execution
 
 ## Boundaries
 
@@ -29,11 +28,9 @@ Use `contract` when the user asks whether rules are clear, convergent, non-redun
 
 Use `readiness` when the user asks whether a repository is operationally ready for safe AI coding.
 
-Use `verification` when the user asks whether the workflow has been truly exercised and evidenced through real execution.
-
 If the user does not specify a mode, infer the closest one from the request and state which mode you chose.
 
-When uncertain where to start, prefer this order: `contract` first, then `readiness`, then `verification`. Each mode builds on the assurances of the prior one.
+When uncertain where to start, prefer `contract` first, then `readiness`. Contract audits the rule system; readiness audits whether the structural prerequisites exist to act on it.
 
 ## Required Inputs
 
@@ -57,7 +54,6 @@ If the repository lacks a unique formal entry, report that as a finding rather t
 3. Load the matching reference:
    - `references/contract-audit.md`
    - `references/readiness-audit.md`
-   - `references/verification-audit.md`
 4. Audit the repository against that framework.
 5. Produce:
    - audit scope
@@ -78,5 +74,4 @@ Additional rule: when repository materials conflict, describe the conflict befor
 
 - For `contract` mode, read `references/contract-audit.md`
 - For `readiness` mode, read `references/readiness-audit.md`
-- For `verification` mode, read `references/verification-audit.md`
 - For scoring format and result layout, read `references/output-templates.md`
